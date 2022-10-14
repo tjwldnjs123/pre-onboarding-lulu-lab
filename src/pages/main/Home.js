@@ -1,13 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <HomeContainer>
       <div className="home-container">
         <div className="header">lululab</div>
         <ul>
-          <li>진료 예약</li>
+          <li onClick={() => navigate("/reservation")}>진료 예약</li>
           <li>예약 조회</li>
         </ul>
       </div>
