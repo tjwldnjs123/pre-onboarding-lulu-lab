@@ -10,12 +10,12 @@ export const phoneNumState = atom({
   default: "",
 });
 
-export const subjectState = atom({
-  key: "subjectState",
-  default: [],
+export const selectSubjectState = atom({
+  key: "selectSubjectState",
+  default: "",
 });
 
-export const hourState = atom({
-  key: "hourState",
-  default: [],
+export const selectHourState = atom({
+  key: "selectHourState",
+  default: "",
 });

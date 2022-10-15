@@ -1,12 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useSetRecoilState } from "recoil";
+import { selectHourState } from "../../atom";
 
 function Calendar({ setTime, hour }) {
   const [startDate, setStartDate] = useState(new Date());
+  const setSelectHour = useSetRecoilState(selectHourState);
+
+  const navigate = useNavigate();
 
   const calendar = useRef(null);
+
+  const handleHour = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <CalendarContainer
       ref={calendar}
@@ -18,14 +29,26 @@ function Calendar({ setTime, hour }) {
     >
       <DatePicker className="calendar-box" selected={startDate} inline />
       <div className="time-box">
-        <select name="예약시간">
+        <select name="예약시간" onChange={(e) => setSelectHour(e.target.value)}>
+          <option>시간을 선택해 주세요</option>
           {hour?.map((time) => (
-            <option key={time.id} value={`${time.hour}:00`}>
+            <option
+              key={time.id}
+              value={`${time.hour}:00`}
+              onClick={handleHour}
+            >
               {time.hour}:00
             </option>
           ))}
         </select>
       </div>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        예약 완료
+      </button>
     </CalendarContainer>
   );
 }

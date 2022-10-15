@@ -10,7 +10,7 @@ function Home() {
         <div className="header">lululab</div>
         <ul>
           <li onClick={() => navigate("/reservation")}>진료 예약</li>
-          <li>예약 조회</li>
+          <li onClick={() => navigate("/lookup")}>예약 조회</li>
         </ul>
       </div>
     </HomeContainer>

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Calendar from "./Calendar";
-import { useRecoilState } from "recoil";
-import { subjectState, hourState } from "../../atom";
+import { useSetRecoilState } from "recoil";
+import { selectSubjectState } from "../../atom";
 
 const Registration = () => {
-  const [subject, setSubject] = useRecoilState(subjectState);
+  const [subject, setSubject] = useState([]);
   const [time, setTime] = useState(false);
-  const [hour, setHour] = useState(hourState);
+  const [hour, setHour] = useState([]);
+  const setSelectSubject = useSetRecoilState(selectSubjectState);
 
   useEffect(() => {
     fetch("/data/time.json")
@@ -23,6 +24,7 @@ const Registration = () => {
 
   const handleChoice = (e) => {
     setTime((prev) => !prev);
+    setSelectSubject(e.target.textContent);
   };
 
   return (
