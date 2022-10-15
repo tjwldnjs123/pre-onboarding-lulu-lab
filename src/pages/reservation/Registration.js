@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Registration = () => {
+  const [subject, setSubject] = useState([]);
+  const [time, setTime] = useState(false);
+  useEffect(() => {
+    fetch("/data/subject.json")
+      .then((res) => res.json())
+      .then((medical) => setSubject(medical.medicalCategory));
+  }, []);
+
+  const handleChoice = (e) => {
+    setTime((prev) => !prev);
+  };
+
   return (
     <RegistrationContainer>
       <div className="registration-list">
@@ -14,14 +26,15 @@ const Registration = () => {
           <div className="treatment-subject">
             <p>진료 분야</p>
             <ul>
-              <li>피부과</li>
-              <li>정형외과</li>
-              <li>소아과</li>
-              <li>정신과</li>
+              {subject?.map((list) => (
+                <li key={list.id} onClick={handleChoice}>
+                  {list.parts}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="calendar-box">
-            <p>진료과목을 선택해주세요</p>
+            {time ? <p>달력</p> : <p>진료과목을 선택해주세요</p>}
           </div>
         </div>
       </div>
