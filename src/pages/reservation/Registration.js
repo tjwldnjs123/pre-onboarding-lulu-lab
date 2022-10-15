@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Calendar from "./Calendar";
 
 const Registration = () => {
   const [subject, setSubject] = useState([]);
   const [time, setTime] = useState(false);
+  const [hour, setHour] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/time.json")
+      .then((res) => res.json())
+      .then((time) => setHour(time.time));
+  }, []);
+
   useEffect(() => {
     fetch("/data/subject.json")
       .then((res) => res.json())
@@ -34,7 +43,11 @@ const Registration = () => {
             </ul>
           </div>
           <div className="calendar-box">
-            {time ? <p>달력</p> : <p>진료과목을 선택해주세요</p>}
+            {time ? (
+              <Calendar setTime={setTime} hour={hour} />
+            ) : (
+              <p>진료과목을 선택해주세요</p>
+            )}
           </div>
         </div>
       </div>
