@@ -1,0 +1,8 @@
+{
+  "medicalCategory": [
+    { "id": 1, "parts": "피부과" },
+    { "id": 2, "parts": "정형외과" },
+    { "id": 3, "parts": "소아과" },
+    { "id": 4, "parts": "정신과" }
+  ]
+}
