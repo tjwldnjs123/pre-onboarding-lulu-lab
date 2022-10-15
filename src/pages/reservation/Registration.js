@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Calendar from "./Calendar";
+import { useRecoilState } from "recoil";
+import { subjectState, hourState } from "../../atom";
 
 const Registration = () => {
-  const [subject, setSubject] = useState([]);
+  const [subject, setSubject] = useRecoilState(subjectState);
   const [time, setTime] = useState(false);
-  const [hour, setHour] = useState([]);
+  const [hour, setHour] = useState(hourState);
 
   useEffect(() => {
     fetch("/data/time.json")

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+import { nameState, phoneNumState } from "../../atom";
 
 const User = () => {
-  const [name, setName] = useState("");
-  const [phoneNum, setPhoneNum] = useState("");
+  const [name, setName] = useRecoilState(nameState);
+  const [phoneNum, setPhoneNum] = useRecoilState(phoneNumState);
 
   const navigate = useNavigate();
 
