@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const User = () => {
+  const [name, setName] = useState("");
+  const [phoneNum, setPhoneNum] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name && phoneNum.length > 10) {
+      navigate("/registration");
+    }
+  };
   return (
     <UserContainer>
       <p>회원 정보</p>
       <div className="user-input">
         <div className="user-name">
           <label htmlFor="userName">환자 이름 </label>
-          <input type="text" id="userName" />
+          <input
+            type="text"
+            id="userName"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
         </div>
         <div className="user-phone">
           <label htmlFor="phoneNum">핸드폰 번호 </label>
-          <input type="number" id="phoneNum" />
+          <input
+            type="number"
+            id="phoneNum"
+            onChange={(e) => {
+              setPhoneNum(e.target.value);
+            }}
+          />
         </div>
       </div>
       <div className="btn">
-        <button>확인</button>
+        <button onClick={handleSubmit}>확인</button>
         <button>취소</button>
       </div>
     </UserContainer>
