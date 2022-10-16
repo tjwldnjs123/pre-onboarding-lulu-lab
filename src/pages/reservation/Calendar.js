@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import moment from "moment";
 
 function Calendar({ setTime, hour, selectSubject }) {
@@ -18,10 +17,12 @@ function Calendar({ setTime, hour, selectSubject }) {
     setSelectHour(e.target.value);
   };
 
+  const pickDay = moment(startDate).format("YYYY-MM-DD");
+
   const handleSuccess = () => {
     if (startDate && selectHour) {
       alert("예약이 완료 되었습니다.");
-      const reservation = [startDate, selectHour, selectSubject];
+      const reservation = [pickDay, selectHour, selectSubject];
       localStorage.setItem("reservation", JSON.stringify(reservation));
 
       navigate("/");

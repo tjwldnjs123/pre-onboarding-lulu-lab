@@ -1,13 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import HeaderLogo from "../../assets/lululab.png";
 
 function Home() {
   const navigate = useNavigate();
   return (
     <HomeContainer>
       <div className="home-container">
-        <div className="header">lululab</div>
+        <div className="header">
+          <img src={HeaderLogo} alt="lululab-logo" />
+        </div>
         <ul>
           <li onClick={() => navigate("/reservation")}>진료 예약</li>
           <li onClick={() => navigate("/lookup")}>예약 조회</li>

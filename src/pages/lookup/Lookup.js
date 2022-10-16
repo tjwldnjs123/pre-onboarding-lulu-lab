@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
+import HeaderLogo from "../../assets/lululab.png";
 
 const Lookup = () => {
   const userInformation = JSON.parse(localStorage.getItem("user"));
@@ -16,9 +17,11 @@ const Lookup = () => {
 
   return (
     <>
+      <div className="header">
+        <img src={HeaderLogo} alt="lululab-logo" />
+      </div>
       {userInformation ? (
         <LokkupContainer>
-          <div className="header">lululab</div>
           <div>
             <p>이름: {userInformation[0]}</p>
             <p>전화번호: {userInformation[1]}</p>
