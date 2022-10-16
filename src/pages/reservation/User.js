@@ -70,6 +70,10 @@ const UserContainer = styled.div`
       padding: 8%;
       text-align: center;
       font-size: 30px;
+
+      @media (min-width: 900px) {
+        margin-top: 40%;
+      }
     }
 
     .user-input {

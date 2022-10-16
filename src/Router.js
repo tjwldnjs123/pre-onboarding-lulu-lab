@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lookup from "./pages/lookup/Lookup";
 import Home from "./pages/main/Home";
-import DetailSubject from "./pages/reservation/DetailSubject";
+import Hospital from "./pages/reservation/Hospital";
 import MainSubject from "./pages/reservation/MainSubject";
 import Reservation from "./pages/reservation/Reservation";
 
@@ -13,7 +13,7 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="/reservation" element={<Reservation />} />
         <Route path="/registration" element={<MainSubject />} />
-        <Route path="/registration:id" element={<DetailSubject />} />
+        <Route path="/registration:id" element={<Hospital />} />
         <Route path="/lookup" element={<Lookup />} />
       </Routes>
     </BrowserRouter>
