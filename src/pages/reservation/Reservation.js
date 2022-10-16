@@ -19,7 +19,7 @@ const ReservationContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
   .reservation-container {
     width: 70%;
@@ -27,7 +27,6 @@ const ReservationContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
   }
 `;
 

@@ -3,52 +3,59 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useSetRecoilState } from "recoil";
-import { selectHourState } from "../../atom";
 
-function Calendar({ setTime, hour }) {
+import moment from "moment";
+
+function Calendar({ setTime, hour, selectSubject }) {
   const [startDate, setStartDate] = useState(new Date());
-  const setSelectHour = useSetRecoilState(selectHourState);
+  const [selectHour, setSelectHour] = useState("");
 
   const navigate = useNavigate();
 
   const calendar = useRef(null);
 
-  const handleHour = (e) => {
-    console.log(e.target.value);
+  const handleReservationHour = (e) => {
+    setSelectHour(e.target.value);
+  };
+
+  const handleSuccess = () => {
+    if (startDate && selectHour) {
+      alert("예약이 완료 되었습니다.");
+      const reservation = [startDate, selectHour, selectSubject];
+      localStorage.setItem("reservation", JSON.stringify(reservation));
+
+      navigate("/");
+    } else {
+      alert("다시 확인해 주십시오.");
+    }
   };
 
   return (
     <CalendarContainer
       ref={calendar}
       onClick={(e) => {
-        if (calendar.current === e.target) {
-          setTime(false);
-        }
+        calendar.current === e.target && setTime(false);
       }}
     >
-      <DatePicker className="calendar-box" selected={startDate} inline />
+      <DatePicker
+        className="calendar-box"
+        selected={startDate}
+        onChange={(e) => setStartDate(e)}
+        shouldCloseOnSelect={false}
+        minDate={new Date()}
+        inline
+      />
       <div className="time-box">
-        <select name="예약시간" onChange={(e) => setSelectHour(e.target.value)}>
+        <select name="예약시간" onChange={handleReservationHour}>
           <option>시간을 선택해 주세요</option>
           {hour?.map((time) => (
-            <option
-              key={time.id}
-              value={`${time.hour}:00`}
-              onClick={handleHour}
-            >
+            <option key={time.id} value={`${time.hour}:00`}>
               {time.hour}:00
             </option>
           ))}
         </select>
       </div>
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        예약 완료
-      </button>
+      <button onClick={handleSuccess}>예약 완료</button>
     </CalendarContainer>
   );
 }

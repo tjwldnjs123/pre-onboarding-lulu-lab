@@ -24,7 +24,7 @@ const HomeContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
   .home-container {
     width: 70%;
@@ -32,7 +32,6 @@ const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
 
     .header {
       padding: 8%;
@@ -43,15 +42,23 @@ const HomeContainer = styled.div`
       width: 100%;
       height: 30%;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
-      flex-direction: column;
-      margin-top: 30%;
+      margin-top: 50%;
       font-size: 25px;
       text-align: center;
 
       li {
         padding: 5%;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(246, 178, 202);
+          color: #fff;
+        }
       }
     }
   }

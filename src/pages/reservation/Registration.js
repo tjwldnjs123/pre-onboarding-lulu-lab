@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Calendar from "./Calendar";
-import { useSetRecoilState } from "recoil";
-import { selectSubjectState } from "../../atom";
 
 const Registration = () => {
   const [subject, setSubject] = useState([]);
   const [time, setTime] = useState(false);
   const [hour, setHour] = useState([]);
-  const setSelectSubject = useSetRecoilState(selectSubjectState);
+  const [selectSubject, setSelectSubject] = useState("");
 
   useEffect(() => {
     fetch("/data/time.json")
@@ -24,12 +22,14 @@ const Registration = () => {
 
   const handleChoice = (e) => {
     setTime((prev) => !prev);
+
     setSelectSubject(e.target.textContent);
   };
 
   return (
     <RegistrationContainer>
       <div className="registration-list">
+        <p className="header">lululab</p>
         <div className="step">
           <p>step 1</p>
           <p>step 2</p>
@@ -47,10 +47,15 @@ const Registration = () => {
             </ul>
           </div>
           <div className="calendar-box">
+            <p>예약시간</p>
             {time ? (
-              <Calendar setTime={setTime} hour={hour} />
+              <Calendar
+                selectSubject={selectSubject}
+                setTime={setTime}
+                hour={hour}
+              />
             ) : (
-              <p>진료과목을 선택해주세요</p>
+              <p className="content">진료과목을 선택해주세요</p>
             )}
           </div>
         </div>
@@ -65,11 +70,21 @@ const RegistrationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
   .registration-list {
     width: 90%;
     height: 100%;
-    border: 1px solid red;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      margin-top: 5%;
+      font-size: 50px;
+    }
 
     .step {
       width: 100%;
@@ -87,35 +102,43 @@ const RegistrationContainer = styled.div`
     }
 
     .registration {
-      border: 1px solid red;
       display: flex;
       width: 100%;
       height: 70%;
 
       .treatment-subject {
-        border: 1px solid gray;
+        border: 1px solid lightgray;
+        border-top: none;
         width: 50%;
-        height: 100%;
-
+        height: 90%;
         p {
-          padding: 3%;
+          padding: 5%;
           font-size: 25px;
+          text-align: center;
         }
         ul {
           li {
             padding: 2%;
             font-size: 20px;
+            text-align: center;
           }
         }
       }
 
       .calendar-box {
         width: 50%;
+        height: 90%;
+        border: 1px solid lightgray;
 
         p {
-          margin-top: 80%;
           text-align: center;
-          font-size: 20px;
+          font-size: 25px;
+          margin-top: 5%;
+        }
+
+        .content {
+          margin-top: 30%;
+          font-size: 18px;
         }
       }
     }
