@@ -20,7 +20,7 @@ const Lookup = () => {
       <div className="header">
         <img src={HeaderLogo} alt="lululab-logo" />
       </div>
-      {userInformation ? (
+      {userInformation && information ? (
         <LokkupContainer>
           <div>
             <p>이름: {userInformation[0]}</p>
