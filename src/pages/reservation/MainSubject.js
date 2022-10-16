@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Calendar from "./Calendar";
 import HeaderLogo from "../../assets/lululab.png";
 
-const Registration = () => {
+const MainSubject = () => {
   const [subject, setSubject] = useState([]);
-  const [time, setTime] = useState(false);
-  const [hour, setHour] = useState([]);
-  const [selectSubject, setSelectSubject] = useState("");
 
-  useEffect(() => {
-    fetch("/data/time.json")
-      .then((res) => res.json())
-      .then((time) => setHour(time.time));
-  }, []);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   fetch("/data/time.json")
+  //     .then((res) => res.json())
+  //     .then((time) => setHour(time.time));
+  // }, []);
 
   useEffect(() => {
     fetch("/data/subject.json")
       .then((res) => res.json())
       .then((medical) => setSubject(medical.medicalCategory));
   }, []);
-
-  console.log(subject);
 
   return (
     <RegistrationContainer>
@@ -32,7 +30,12 @@ const Registration = () => {
         <p>진료 과목</p>
         <ul>
           {subject?.map((subjectEl) => (
-            <li key={subjectEl.id}>{subjectEl.parts}</li>
+            <li
+              key={subjectEl.id}
+              onClick={() => navigate(`/registration${subjectEl.id}`)}
+            >
+              {subjectEl.parts}
+            </li>
           ))}
         </ul>
       </div>
@@ -111,4 +114,4 @@ const RegistrationContainer = styled.div`
   }
 `;
 
-export default Registration;
+export default MainSubject;
