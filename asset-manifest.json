@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pre-onboarding-lulu-lab/static/css/main.746f1836.css",
-    "main.js": "/pre-onboarding-lulu-lab/static/js/main.52c21a39.js",
+    "main.js": "/pre-onboarding-lulu-lab/static/js/main.5e83e731.js",
     "index.html": "/pre-onboarding-lulu-lab/index.html",
     "main.746f1836.css.map": "/pre-onboarding-lulu-lab/static/css/main.746f1836.css.map",
-    "main.52c21a39.js.map": "/pre-onboarding-lulu-lab/static/js/main.52c21a39.js.map"
+    "main.5e83e731.js.map": "/pre-onboarding-lulu-lab/static/js/main.5e83e731.js.map"
   },
   "entrypoints": [
     "static/css/main.746f1836.css",
-    "static/js/main.52c21a39.js"
+    "static/js/main.5e83e731.js"
   ]
 }
