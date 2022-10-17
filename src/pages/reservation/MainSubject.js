@@ -37,16 +37,12 @@ const MainSubjectContainer = styled.div`
   p {
     height: 50px;
     text-align: center;
-    font-size: 25px;
-
-    /* @media (min-width: 900px) {
-      margin-top: 20%;
-    } */
+    font-size: 22px;
   }
 
   ul {
     width: 80%;
-    height: 280px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +58,7 @@ const MainSubjectContainer = styled.div`
       align-items: center;
       border: 1px solid lightgray;
       border-radius: 10%;
-      font-size: 17px;
+      font-size: 13px;
       text-align: center;
       cursor: pointer;
 

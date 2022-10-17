@@ -55,7 +55,7 @@ const Hospital = () => {
 const HospitalContainer = styled.div`
   p {
     height: 50px;
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
 
     @media (min-width: 900px) {
@@ -64,12 +64,11 @@ const HospitalContainer = styled.div`
   }
   .hospital-name {
     width: 350px;
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5%;
-    font-size: 20px;
+    padding: 10%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
@@ -78,12 +77,12 @@ const HospitalContainer = styled.div`
     }
 
     li {
-      font-size: 23px;
-      line-height: 3rem;
+      font-size: 18px;
+      line-height: 2rem;
       cursor: pointer;
 
       @media (max-width: ${({ theme }) => theme.iPhone}) {
-        font-size: 18px;
+        font-size: 12px;
       }
 
       &:hover {

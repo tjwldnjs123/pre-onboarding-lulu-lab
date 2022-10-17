@@ -55,16 +55,29 @@ const UserContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 350px;
-  height: 350px;
+  height: 200px;
   line-height: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
+  @media (max-width: ${({ theme }) => theme.iPhone}) {
+    width: 300px;
+    height: 150px;
+  }
+
   p {
     font-size: 18px;
+    @media (max-width: ${({ theme }) => theme.iPhone}) {
+      font-size: 12px;
+    }
   }
   .name {
     margin-bottom: 10px;
     font-size: 25px;
+
+    @media (max-width: ${({ theme }) => theme.iPhone}) {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
   }
 
   .btn-container {
@@ -72,6 +85,10 @@ const UserContainer = styled.div`
     justify-content: space-around;
     height: 30px;
     margin-top: 20%;
+
+    @media (max-width: ${({ theme }) => theme.iPhone}) {
+      margin-top: 3%;
+    }
 
     button {
       background-color: #fff;
