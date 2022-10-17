@@ -57,6 +57,7 @@ function Calendar({ setModal, hospitalName }) {
             className="time-box"
             onChange={(e) => setSelectHour(e.target.value)}
           >
+            <option>시간을 선택해 주세요:)</option>
             {time.map((hour, idx) => (
               <option key={idx}>{hour}</option>
             ))}
@@ -105,7 +106,7 @@ const CalendarContainer = styled.div`
       .time-box {
         width: 200px;
         height: 30px;
-        font-size: 20px;
+        font-size: 15px;
       }
       button {
         width: 100px;

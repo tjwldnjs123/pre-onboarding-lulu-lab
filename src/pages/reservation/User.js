@@ -97,8 +97,8 @@ const UserContainer = styled.div`
         border-bottom: 1px solid #000;
         font-size: 18px;
 
-        @media (min-width: ${({ theme }) => theme.iPhone}) {
-          font-size: 12px;
+        @media (max-width: ${({ theme }) => theme.iPhone}) {
+          font-size: 15px;
         }
 
         &:focus {
