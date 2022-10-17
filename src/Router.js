@@ -8,7 +8,7 @@ import Reservation from "./pages/reservation/Reservation";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="pre-onboarding-lulu-lab">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reservation" element={<Reservation />} />
