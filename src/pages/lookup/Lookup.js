@@ -92,6 +92,7 @@ const UserContainer = styled.div`
 
     button {
       background-color: #fff;
+      color: #000;
       border: none;
       cursor: pointer;
 
