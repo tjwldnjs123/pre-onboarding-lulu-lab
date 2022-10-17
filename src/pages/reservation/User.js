@@ -6,6 +6,7 @@ const User = () => {
   const [name, setName] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [submitMsg, setSubmitMsg] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,6 +23,11 @@ const User = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    name.length === 0 && phoneNum.length < 10
+      ? setSubmitMsg("양식에 맞게 채워주세요.")
+      : setSubmitMsg("");
+
     if (name && phoneNum.length > 10) {
       navigate("/registration");
       localStorage.setItem("user", JSON.stringify([name, phoneNum]));
@@ -46,6 +52,7 @@ const User = () => {
           <button onClick={handleSubmit}>확인</button>
           <button onClick={() => navigate("/")}>취소</button>
         </div>
+        <p className="message">{submitMsg}</p>
       </div>
     </UserContainer>
   );
@@ -133,6 +140,11 @@ const UserContainer = styled.div`
           border: none;
         }
       }
+    }
+
+    .message {
+      font-size: 20px;
+      color: gray;
     }
   }
 `;

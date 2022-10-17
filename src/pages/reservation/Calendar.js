@@ -5,26 +5,29 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 
-function Calendar({ setTime, hour, selectSubject }) {
+function Calendar({ setModal, hospitalName }) {
   const [startDate, setStartDate] = useState(new Date());
   const [selectHour, setSelectHour] = useState("");
-
-  const navigate = useNavigate();
+  const [time, setTime] = useState([]);
 
   const calendar = useRef(null);
 
-  const handleReservationHour = (e) => {
-    setSelectHour(e.target.value);
-  };
+  useEffect(() => {
+    fetch("/data/time.json")
+      .then((res) => res.json())
+      .then((data) => setTime(data.time));
+  }, []);
+
+  const navigate = useNavigate();
 
   const pickDay = moment(startDate).format("YYYY-MM-DD");
+
+  const information = [hospitalName, pickDay, selectHour];
 
   const handleSuccess = () => {
     if (startDate && selectHour) {
       alert("예약이 완료 되었습니다.");
-      const reservation = [pickDay, selectHour, selectSubject];
-      localStorage.setItem("reservation", JSON.stringify(reservation));
-
+      localStorage.setItem("information", JSON.stringify(information));
       navigate("/");
     } else {
       alert("다시 확인해 주십시오.");
@@ -35,60 +38,88 @@ function Calendar({ setTime, hour, selectSubject }) {
     <CalendarContainer
       ref={calendar}
       onClick={(e) => {
-        calendar.current === e.target && setTime(false);
+        if (calendar.current === e.target) {
+          setModal(false);
+        }
       }}
     >
-      <DatePicker
-        className="calendar-box"
-        selected={startDate}
-        onChange={(e) => setStartDate(e)}
-        shouldCloseOnSelect={false}
-        minDate={new Date()}
-        inline
-      />
-      <div className="time-box">
-        <select name="예약시간" onChange={handleReservationHour}>
-          <option>시간을 선택해 주세요</option>
-          {hour?.map((time) => (
-            <option key={time.id} value={`${time.hour}:00`}>
-              {time.hour}:00
-            </option>
-          ))}
-        </select>
+      <div className="calendar-container">
+        <DatePicker
+          className="calendar-box"
+          selected={startDate}
+          onChange={(e) => setStartDate(e)}
+          shouldCloseOnSelect={false}
+          minDate={new Date()}
+          inline
+        />
+        <div className="time-container">
+          <select
+            className="time-box"
+            onChange={(e) => setSelectHour(e.target.value)}
+          >
+            {time.map((hour, idx) => (
+              <option key={idx}>{hour}</option>
+            ))}
+          </select>
+          <button onClick={handleSuccess}>예약 완료</button>
+        </div>
       </div>
-      <button onClick={handleSuccess}>예약 완료</button>
     </CalendarContainer>
   );
 }
 
 const CalendarContainer = styled.div`
   position: fixed;
-  border: 1px solid blue;
-  height: 100vh;
-  background-color: #00000099;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #00000099;
   z-index: 1;
 
-  .calendar-box {
-    z-index: 10;
-
-    border: 1px solid red;
+  .calendar-container {
     .react-datepicker__month-container {
-      width: 400px;
-      height: 500px;
-    }
-  }
+      width: 300px;
+      height: 300px;
 
-  .time-box {
-    select {
-      width: 100px;
+      @media (max-width: ${({ theme }) => theme.iPhone}) {
+        width: 280px;
+        height: 280px;
+      }
+    }
+    .react-datepicker__day--selected {
+      background-color: rgb(246, 178, 202);
+      border-radius: 50%;
+    }
+
+    .time-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 8%;
+
+      .time-box {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+      }
+      button {
+        margin-top: 3%;
+        width: 100px;
+        height: 50px;
+        border-radius: 10%;
+
+        &:hover {
+          background-color: rgb(246, 178, 202);
+          border: none;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
     }
   }
 `;

@@ -31,12 +31,22 @@ const ContainerBox = styled.div`
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
+    @media (max-width: ${({ theme }) => theme.iPhone}) {
+      width: 100%;
+      height: 100%;
+    }
+
     .header {
       padding: 20%;
 
       img {
         width: 330px;
         height: 70px;
+
+        @media (max-width: ${({ theme }) => theme.iPhone}) {
+          width: 200px;
+          height: 50px;
+        }
       }
     }
   }

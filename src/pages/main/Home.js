@@ -29,6 +29,9 @@ const BtnBox = styled.ul`
   @media (min-width: 900px) {
     margin-top: 50%;
   }
+  @media (max-width: ${({ theme }) => theme.tablet}) {
+    flex-direction: column;
+  }
 
   li {
     padding: 5%;

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import HeaderLogo from "../../assets/lululab.png";
 import Container from "../../components/Container";
 
 const MainSubject = () => {
@@ -45,6 +44,7 @@ const MainSubjectContainer = styled.div`
       height: 50px;
       text-align: center;
       font-size: 25px;
+     
 
       @media (min-width: 900px) {
         margin-top: 20%;
@@ -71,6 +71,12 @@ const MainSubjectContainer = styled.div`
         align-items: center;
         font-size: 20px;
         cursor: pointer;
+
+        @media (max-width: ${({ theme }) => theme.iPhone}) {
+      width: 100px;
+      height: 50px;
+      font-size: 14px;
+    }
 
         &:hover {
           position: relative;
