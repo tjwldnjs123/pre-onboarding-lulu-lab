@@ -100,6 +100,10 @@ const UserContainer = styled.div`
         border-bottom: 1px solid #000;
         font-size: 18px;
 
+        @media (min-width: ${({ theme }) => theme.iPhone}) {
+          font: 12px;
+        }
+
         &:focus {
           outline: none;
         }

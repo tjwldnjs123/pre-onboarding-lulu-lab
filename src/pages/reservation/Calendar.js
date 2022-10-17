@@ -13,7 +13,7 @@ function Calendar({ setModal, hospitalName }) {
   const calendar = useRef(null);
 
   useEffect(() => {
-    fetch("/data/time.json")
+    fetch("/pre-onboarding-lulu-lab/data/time.json")
       .then((res) => res.json())
       .then((data) => setTime(data.time));
   }, []);
