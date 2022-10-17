@@ -39,8 +39,8 @@ const ContainerBox = styled.div`
       padding: 20%;
 
       img {
-        width: 330px;
-        height: 70px;
+        width: 300px;
+        height: 60px;
 
         @media (max-width: ${({ theme }) => theme.iPhone}) {
           width: 200px;

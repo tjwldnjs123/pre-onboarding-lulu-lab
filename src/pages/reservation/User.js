@@ -68,6 +68,7 @@ const UserContainer = styled.div`
 
   .user-container {
     width: 80%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,19 +78,15 @@ const UserContainer = styled.div`
       padding: 8%;
       text-align: center;
       font-size: 30px;
-
-      @media (min-width: 900px) {
-        margin-top: 40%;
-      }
     }
 
     .user-input {
       width: 50%;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
       font-size: 19px;
 
       label {
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         text-align: center;
       }
 
@@ -101,7 +98,7 @@ const UserContainer = styled.div`
         font-size: 18px;
 
         @media (min-width: ${({ theme }) => theme.iPhone}) {
-          font: 12px;
+          font-size: 12px;
         }
 
         &:focus {
@@ -112,7 +109,7 @@ const UserContainer = styled.div`
       .user-name {
         display: flex;
         flex-direction: column;
-        margin-bottom: 10%;
+        margin-bottom: 8%;
       }
       .user-phone {
         display: flex;

@@ -12,7 +12,7 @@ const Hospital = () => {
   const params = useParams().id;
 
   useEffect(() => {
-    fetch("/data/subject.json")
+    fetch("/pre-onboarding-lulu-lab/data/subject.json")
       .then((res) => res.json())
       .then((data) => setHospital(data.medicalCategory));
   }, []);
@@ -59,12 +59,12 @@ const HospitalContainer = styled.div`
     text-align: center;
 
     @media (min-width: 900px) {
-      margin-top: 23%;
+      margin-top: 3%;
     }
   }
   .hospital-name {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +83,7 @@ const HospitalContainer = styled.div`
       cursor: pointer;
 
       @media (max-width: ${({ theme }) => theme.iPhone}) {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       &:hover {

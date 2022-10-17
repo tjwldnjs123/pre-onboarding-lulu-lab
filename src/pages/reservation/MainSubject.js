@@ -9,7 +9,7 @@ const MainSubject = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/subject.json")
+    fetch("/pre-onboarding-lulu-lab/data/subject.json")
       .then((res) => res.json())
       .then((medical) => setSubject(medical.medicalCategory));
   }, []);
@@ -39,36 +39,37 @@ const MainSubjectContainer = styled.div`
     text-align: center;
     font-size: 25px;
 
-    @media (min-width: 900px) {
+    /* @media (min-width: 900px) {
       margin-top: 20%;
-    }
+    } */
   }
 
   ul {
     width: 80%;
-    height: 35%;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 5% auto 0 auto;
+    margin: 1% auto 0 auto;
 
     li {
-      width: 150px;
-      height: 100px;
+      width: 90px;
+      height: 60px;
       margin: 2%;
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid lightgray;
       border-radius: 10%;
-      font-size: 20px;
+      font-size: 17px;
+      text-align: center;
       cursor: pointer;
 
       @media (max-width: ${({ theme }) => theme.iPhone}) {
-        width: 100px;
+        width: 50px;
         height: 50px;
-        font-size: 14px;
+        font-size: 8px;
       }
 
       &:hover {

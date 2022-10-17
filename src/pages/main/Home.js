@@ -21,12 +21,12 @@ const BtnBox = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 30%;
+  margin-top: 20%;
   font-size: 25px;
   text-align: center;
 
   @media (min-width: 900px) {
-    margin-top: 50%;
+    margin-top: 10%;
   }
   @media (max-width: ${({ theme }) => theme.iPhone}) {
     flex-direction: column;
