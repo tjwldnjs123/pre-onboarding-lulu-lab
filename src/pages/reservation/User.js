@@ -85,12 +85,12 @@ const UserContainer = styled.div`
 
     .user-input {
       width: 50%;
-      font-size: 19px;
       margin-bottom: 10%;
+      font-size: 19px;
 
       label {
-        text-align: center;
         margin-bottom: 5%;
+        text-align: center;
       }
 
       input {

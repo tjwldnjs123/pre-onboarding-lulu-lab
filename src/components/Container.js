@@ -32,8 +32,7 @@ const ContainerBox = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
     @media (max-width: ${({ theme }) => theme.iPhone}) {
-      width: 100%;
-      height: 100%;
+      box-shadow: none;
     }
 
     .header {

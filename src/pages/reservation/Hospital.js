@@ -5,11 +5,11 @@ import Container from "../../components/Container";
 import Calendar from "./Calendar";
 
 const Hospital = () => {
-  const params = useParams().id;
-
   const [hospital, setHospital] = useState([]);
   const [modal, setModal] = useState(false);
   const [hospitalName, setHospitalName] = useState("");
+
+  const params = useParams().id;
 
   useEffect(() => {
     fetch("/data/subject.json")
@@ -64,12 +64,12 @@ const HospitalContainer = styled.div`
   }
   .hospital-name {
     width: 450px;
-    height: 500px;
-    font-size: 20px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5%;
+    font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
@@ -89,7 +89,7 @@ const HospitalContainer = styled.div`
       &:hover {
         width: 100%;
         text-align: center;
-        background-color: rgb(182, 178, 187);
+        background-color: rgb(246, 178, 202);
         border: none;
         color: #fff;
       }

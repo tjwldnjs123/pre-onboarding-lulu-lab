@@ -81,19 +81,19 @@ const CalendarContainer = styled.div`
   background-color: #00000099;
   z-index: 1;
 
+  @media (max-width: ${({ theme }) => theme.iPhone}) {
+    margin-right: 25px;
+  }
+
   .calendar-container {
     .react-datepicker__month-container {
       width: 300px;
       height: 300px;
-
-      @media (max-width: ${({ theme }) => theme.iPhone}) {
-        width: 280px;
-        height: 280px;
-      }
     }
     .react-datepicker__day--selected {
       background-color: rgb(246, 178, 202);
       border-radius: 50%;
+      font-size: 20px;
     }
 
     .time-container {
@@ -108,9 +108,9 @@ const CalendarContainer = styled.div`
         font-size: 20px;
       }
       button {
-        margin-top: 3%;
         width: 100px;
         height: 50px;
+        margin-top: 3%;
         border-radius: 10%;
 
         &:hover {

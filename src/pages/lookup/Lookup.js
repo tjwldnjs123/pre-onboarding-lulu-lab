@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
-import HeaderLogo from "../../assets/lululab.png";
 import Container from "../../components/Container";
 
 const Lookup = () => {
@@ -64,8 +63,8 @@ const UserContainer = styled.div`
     font-size: 18px;
   }
   .name {
-    font-size: 25px;
     margin-bottom: 10px;
+    font-size: 25px;
   }
 
   .btn-container {
@@ -75,8 +74,8 @@ const UserContainer = styled.div`
     margin-top: 20%;
 
     button {
-      border: none;
       background-color: #fff;
+      border: none;
       cursor: pointer;
 
       &:hover {

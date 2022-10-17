@@ -8,12 +8,6 @@ const MainSubject = () => {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   fetch("/data/time.json")
-  //     .then((res) => res.json())
-  //     .then((time) => setHour(time.time));
-  // }, []);
-
   useEffect(() => {
     fetch("/data/subject.json")
       .then((res) => res.json())
@@ -41,52 +35,52 @@ const MainSubject = () => {
 
 const MainSubjectContainer = styled.div`
   p {
-      height: 50px;
-      text-align: center;
-      font-size: 25px;
-     
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
 
-      @media (min-width: 900px) {
-        margin-top: 20%;
-      }
+    @media (min-width: 900px) {
+      margin-top: 20%;
     }
+  }
 
-    ul {
-      width: 80%;
+  ul {
+    width: 80%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5% auto 0 auto;
+
+    li {
+      width: 150px;
+      height: 100px;
+      margin: 2%;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      height: 35%;
-      margin: 5% auto 0 auto;
+      border: 1px solid lightgray;
+      border-radius: 10%;
+      font-size: 20px;
+      cursor: pointer;
 
-      li {
-        border: 1px solid lightgray;
-        width: 150px;
-        height: 100px;
-        margin: 2%;
-        border-radius: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        cursor: pointer;
-
-        @media (max-width: ${({ theme }) => theme.iPhone}) {
-      width: 100px;
-      height: 50px;
-      font-size: 14px;
-    }
-
-        &:hover {
-          position: relative;
-          top: -15px;
-          background-color: rgb(246, 178, 202);
-          border: none;
-          color: #fff;
-          transition: 0.5s;
-        }
+      @media (max-width: ${({ theme }) => theme.iPhone}) {
+        width: 100px;
+        height: 50px;
+        font-size: 14px;
       }
+
+      &:hover {
+        position: relative;
+        top: -15px;
+        background-color: rgb(246, 178, 202);
+        border: none;
+        color: #fff;
+        transition: 0.5s;
+      }
+    }
+  }
 `;
 
 export default MainSubject;

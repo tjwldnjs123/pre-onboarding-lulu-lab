@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
 import Container from "../../components/Container";
 
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
   return (
     <Container>
@@ -14,7 +13,7 @@ function Home() {
       </BtnBox>
     </Container>
   );
-}
+};
 
 const BtnBox = styled.ul`
   width: 100%;
@@ -29,7 +28,7 @@ const BtnBox = styled.ul`
   @media (min-width: 900px) {
     margin-top: 50%;
   }
-  @media (max-width: ${({ theme }) => theme.tablet}) {
+  @media (max-width: ${({ theme }) => theme.iPhone}) {
     flex-direction: column;
   }
 
