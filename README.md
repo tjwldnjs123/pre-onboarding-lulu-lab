@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# lulu-lab 병원 예약 시스템 구축
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **[배포링크](https://tjwldnjs123.github.io/pre-onboarding-lulu-lab)**
 
-## Available Scripts
 
-In the project directory, you can run:
+## 1. 개발 기간 🗓
 
-### `npm start`
+- **개발 기간** : 2022.10.15 ~ 2022.10.17(3일)
+  <br />
+  <br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 2. 프로그램 실행 방법 및 파일 프로젝트 구조 🚧
 
-### `npm test`
+### 프로그램 실행 방법
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `npm run build`
+1.  터미널을 키고 원하는 폴더 경로로 이동해 레포지토리를 클론 받습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone https://github.com/tjwldnjs123/pre-onboarding-lulu-lab.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  클론이 다 받아지고 나면 패키지를 다운 받습니다.
 
-### `npm run eject`
+```
+npm i
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  프로젝트를 실행합니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
 
-## Learn More
+4. 브라우저가 켜지고 프로젝트를 확인 할 수 있습니다.
+   <br />
+   <br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 파일 프로젝트 구조
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+- `src/pages/main`: 메인 페이지 파일 폴더
+- `src/pages/reservation`: 병원예약 페이지 파일 폴더
+- `src/pages/lookup`: 예약내역 조회 관리 폴더
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   <br />
+   <br />
 
-### Analyzing the Bundle Size
+## 3. 적용 기술 및 구현 기능 🛠
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br />
 
-### Making a Progressive Web App
+### 3-1. 적용 기술
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- JavaScript
+- React.js
+- react-router-dom
+- styled-components
+- react-datepicker
+- moment (날짜 변환)
+- gh-pages (배포라이브러리)
 
-### Advanced Configuration
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3-2. 구현 기능
 
-### Deployment
+- ✅ 메인 페이지 _(/ )_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    - 메인페이지
+      - 진료예약, 예약조회 레이아웃
+      - useNavigate()로 경로 이동
 
-### `npm run build` fails to minify
+  <br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ✅ 예약 등록 페이지 
+
+    - 회원 등록 _(/reservation)_
+      - 이름, 휴대폰번호 입력으로 본인 확인
+      - localstorage로 회원정보 저장
+  <br />
+
+    - 진료 과목 _(/registration)_
+      - 목데이터로 구현한 진료과목 map()메서드로 적용
+      - 진료과목 클릭 시 해당 병원으로 이동
+      
+  <br />
+    - 해당 병원 _(/registration:id)_
+      - useParams()로 id를 추출해 진료과목 id와 일치하면 해당 병원들 나오게 구현
+      - 병원 클릭 시 달력모달창 구현
+      - 날짜,시간 선택 후 예약완료 클릭하면 localstorage에 병원,날짜,시간 저장
+   <br />
+   
+- ✅ 예약 조회 페이지    
+    - 예약 조회 _(/lookup)_
+      - 회원정보가 없으면 조건부렌더링으로 회원정보페이지로 이동하게 Link설정
+      - localstorage에 저장된 정보 불러오기
+      - 변경버튼 클릭 시 예약내역 수정 구현
+      - 나가기 버튼 클릭 시 localstorge정보 
+      
