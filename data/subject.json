@@ -1,0 +1,228 @@
+{
+  "medicalCategory": [
+    {
+      "id": 1,
+      "parts": "피부과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "오라클피부과의원"
+        },
+        {
+          "address": 2,
+          "hospital": "CU클린업피부과의원 강남점"
+        },
+        {
+          "address": 3,
+          "hospital": "연세희망피부과의원"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "parts": "정형외과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "다산 에이스병원"
+        },
+        {
+          "address": 2,
+          "hospital": "바를정마취통증의학과의원"
+        },
+        {
+          "address": 3,
+          "hospital": "문정이누리정형외과의원"
+        },
+        {
+          "address": 4,
+          "hospital": "나음정형외과의원"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "parts": "소아과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "우리소아청소년과의원"
+        },
+        {
+          "address": 2,
+          "hospital": "행복아이소아청소년과의원"
+        },
+        {
+          "address": 3,
+          "hospital": "기린소아청소년과"
+        },
+        {
+          "address": 4,
+          "hospital": "연세정소아과의원"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "parts": "정신과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "마음도담 심리연구센터"
+        },
+        {
+          "address": 2,
+          "hospital": "연세필 정신건강의학과 의원"
+        },
+        {
+          "address": 3,
+          "hospital": "전현수정신건강의학과의원"
+        },
+        {
+          "address": 4,
+          "hospital": "우리공감 정신건강의학과"
+        },
+        {
+          "address": 5,
+          "hospital": "서울성모정신건강의학과의원"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "parts": "마취통증의학과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "바를정마취통증의학과의원"
+        },
+        {
+          "address": 2,
+          "hospital": "서울제통마취통증의학과"
+        },
+        {
+          "address": 3,
+          "hospital": "민마취통증의학과"
+        },
+        {
+          "address": 4,
+          "hospital": "연세김이마취통증의학과의원"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "parts": "산부인과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "빛플로체여성의원"
+        },
+        {
+          "address": 2,
+          "hospital": "애플산부인과의원 잠실점"
+        },
+        {
+          "address": 3,
+          "hospital": "삼성산부인과"
+        },
+        {
+          "address": 4,
+          "hospital": "김미경산부인과의원"
+        },
+        {
+          "address": 5,
+          "hospital": "미소와산부인과"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "parts": "안과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "성모진안과의원"
+        },
+        {
+          "address": 2,
+          "hospital": "에스앤비안과"
+        },
+        {
+          "address": 3,
+          "hospital": "서울스마트안과의원"
+        },
+        {
+          "address": 4,
+          "hospital": "서울 휘 안과"
+        },
+        {
+          "address": 5,
+          "hospital": "혜민안과병원"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "parts": "이비인후과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "페이지성형외과의원"
+        },
+        {
+          "address": 2,
+          "hospital": "종로연세이비인후과내과"
+        },
+        {
+          "address": 3,
+          "hospital": "연세힐링이비인후과의원"
+        },
+        {
+          "address": 4,
+          "hospital": "굿모닝이비인후과"
+        },
+        {
+          "address": 5,
+          "hospital": "연세테라이비인후과"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "parts": "비뇨의학과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "골드만비뇨기과 잠실"
+        },
+        {
+          "address": 2,
+          "hospital": "강남가드비뇨기과"
+        },
+        {
+          "address": 3,
+          "hospital": "서울비뇨기과의원"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "parts": "방사선종양학과",
+      "detailParts": [
+        {
+          "address": 1,
+          "hospital": "삼성서울병원 양성자치료센터"
+        },
+        {
+          "address": 2,
+          "hospital": "강남성심병원 방사선종양학과"
+        },
+        {
+          "address": 3,
+          "hospital": "참사랑가정의원"
+        }
+      ]
+    }
+  ]
+}
