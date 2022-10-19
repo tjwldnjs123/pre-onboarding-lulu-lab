@@ -48,7 +48,8 @@ npm start
 
 
 - `src/pages/main`: 메인 페이지 파일 폴더
-- `src/pages/reservation`: 병원예약 페이지 파일 폴더
+- `src/pages/reservation`: 병원예약 페이지 파일 (ex)피부과,정형외과,소아과...)
+- `src/pages/registration`: 상세병원예약 페이지 파일 (ex)병원이름)
 - `src/pages/lookup`: 예약내역 조회 관리 폴더
 
    <br />
