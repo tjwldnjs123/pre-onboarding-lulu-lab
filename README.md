@@ -97,7 +97,10 @@ npm start
     - 해당 병원 _(/registration:id)_
       - useParams()로 id를 추출해 진료과목 id와 일치하면 해당 병원들 나오게 구현
       - 병원 클릭 시 달력모달창 구현
-      - 날짜,시간 선택 후 예약완료 클릭하면 localstorage에 병원,날짜,시간 저장
+      - 날짜,시간 모두 선택해야 예약완료 가능
+      - 예약완료 클릭 시 localstorage에 병원,날짜,시간 저장
+   
+    
       
    <br />
    
